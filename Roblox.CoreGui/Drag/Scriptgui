@@ -1,0 +1,374 @@
+guis = {
+	["Reviz Fe Admin"] = "https://raw.githubusercontent.com/48973854274252/0/refs/heads/main/Script.Storage/Revis_admin",
+	["[ BROKEN ] Dex Explorer V1.0.0 Rasberri pi, Moon"] = "https://raw.githubusercontent.com/48973854274252/dex/refs/heads/main/Hamchhez/dark",
+	["Mr. Spy RemoteSpy"] = "https://raw.githubusercontent.com/48973854274252/0/refs/heads/main/Script.Storage/Mr.%20Remotespy"
+}
+scripts = {
+	["Vaeb's RemoteSpy"] = "https://raw.githubusercontent.com/48973854274252/0/refs/heads/main/Script.Storage/VeobRemotespy",
+	
+}
+local Library = Instance.new("ScreenGui")
+local MainLibrary = Instance.new("Frame")
+local GuiOPEN = Instance.new("TextButton")
+local ScriptsOPEN = Instance.new("TextButton")
+local TitleLib = Instance.new("TextLabel")
+local LibraryIcon = Instance.new("ImageLabel")
+local Close = Instance.new("ImageButton")
+local Chooser = Instance.new("Frame")
+local TopBar = Instance.new("Frame")
+local GuiSearch = Instance.new("TextBox")
+local GuiObj = Instance.new("ScrollingFrame")
+local ScriptObj = Instance.new("ScrollingFrame")
+local ScriptSearch = Instance.new("TextBox")
+local ImageButton = Instance.new("ImageButton")
+local Settings = Instance.new("Frame")
+local OTitle = Instance.new("TextLabel")
+local Transparency = Instance.new("ScrollingFrame")
+local GUIListLayout = Instance.new("UIListLayout")
+local ScriptListLayout = Instance.new("UIListLayout")
+function FADE(BTN)
+	for i=.1,1,.1 do
+		BTN.Transparency = i
+		game:GetService("RunService").Stepped:Wait()
+	end
+	game:GetService("RunService").Stepped:Wait()
+	for i=1,0,-.1 do
+		BTN.Transparency = i
+		game:GetService("RunService").Stepped:Wait()
+	end
+end
+Library.Name = "Library"
+Library.Parent = game.CoreGui
+MainLibrary.Name = "MainLibrary"
+MainLibrary.Parent = Library
+MainLibrary.Active = true
+MainLibrary.BackgroundColor3 = Color3.new(0.356863, 0.803922, 1)
+MainLibrary.BorderSizePixel = 0
+MainLibrary.Draggable = true
+MainLibrary.Position = UDim2.new(0.417047203, 0, 0.216430888, 0)
+MainLibrary.Size = UDim2.new(0, 320, 0, 419)
+MainLibrary.ZIndex = 2
+GuiOPEN.Name = "GuiOPEN"
+GuiOPEN.Parent = MainLibrary
+GuiOPEN.BackgroundColor3 = Color3.new(1, 1, 1)
+GuiOPEN.BorderSizePixel = 0
+GuiOPEN.Position = UDim2.new(0, 0, 0.0811455846, 0)
+GuiOPEN.Size = UDim2.new(0, 160, 0, 37)
+GuiOPEN.ZIndex = 3
+GuiOPEN.Font = Enum.Font.SourceSansSemibold
+GuiOPEN.FontSize = Enum.FontSize.Size24
+GuiOPEN.Text = "Gui's"
+GuiOPEN.TextColor3 = Color3.new(0.509804, 0.796079, 1)
+GuiOPEN.TextSize = 24
+ScriptsOPEN.Name = "ScriptsOPEN"
+ScriptsOPEN.Parent = MainLibrary
+ScriptsOPEN.BackgroundColor3 = Color3.new(1, 1, 1)
+ScriptsOPEN.BorderSizePixel = 0
+ScriptsOPEN.Position = UDim2.new(0.5, 0, 0.0811455846, 0)
+ScriptsOPEN.Size = UDim2.new(0, 160, 0, 37)
+ScriptsOPEN.ZIndex = 3
+ScriptsOPEN.Font = Enum.Font.SourceSansSemibold
+ScriptsOPEN.FontSize = Enum.FontSize.Size24
+ScriptsOPEN.Text = "Script's"
+ScriptsOPEN.TextColor3 = Color3.new(0.509804, 0.796079, 1)
+ScriptsOPEN.TextSize = 24
+TitleLib.Name = "TitleLib"
+TitleLib.Parent = MainLibrary
+TitleLib.BackgroundColor3 = Color3.new(1, 1, 1)
+TitleLib.BorderSizePixel = 0
+TitleLib.Size = UDim2.new(0, 320, 0, 34)
+TitleLib.ZIndex = 3
+TitleLib.Font = Enum.Font.SourceSansLight
+TitleLib.FontSize = Enum.FontSize.Size32
+TitleLib.Text = "       Warp V1 Library"
+TitleLib.TextSize = 32
+TitleLib.TextXAlignment = Enum.TextXAlignment.Left
+TitleLib.TextYAlignment = Enum.TextYAlignment.Bottom
+LibraryIcon.Name = "LibraryIcon"
+LibraryIcon.Parent = TitleLib
+LibraryIcon.BackgroundColor3 = Color3.new(1, 1, 1)
+LibraryIcon.BackgroundTransparency = 1
+LibraryIcon.Position = UDim2.new(0, 0, 0.071528852, 0)
+LibraryIcon.Size = UDim2.new(0, 32, 0, 32)
+LibraryIcon.Image = "rbxassetid://728745585"
+LibraryIcon.ImageColor3 = Color3.new(0.286275, 1, 0.941177)
+Close.Name = "Close"
+Close.Parent = MainLibrary
+Close.BackgroundColor3 = Color3.new(1, 1, 1)
+Close.BackgroundTransparency = 1
+Close.Position = UDim2.new(0.909375012, 0, 0, 0)
+Close.Size = UDim2.new(0, 29, 0, 29)
+Close.ZIndex = 3
+Close.Image = "rbxassetid://1375879623"
+Close.ImageColor3 = Color3.new(0.921569, 0.219608, 0.219608)
+Chooser.Name = "Chooser"
+Chooser.Parent = MainLibrary
+Chooser.BackgroundColor3 = Color3.new(0.360784, 0.807843, 1)
+Chooser.BackgroundTransparency = 0.30000001192093
+Chooser.BorderSizePixel = 0
+Chooser.Position = UDim2.new(0, 0, 0.155131266, 0)
+Chooser.Size = UDim2.new(0, 160, 0, 6)
+Chooser.ZIndex = 3
+TopBar.Name = "TopBar"
+TopBar.Parent = MainLibrary
+TopBar.BackgroundColor3 = Color3.new(0.423529, 0.905882, 1)
+TopBar.BorderSizePixel = 0
+TopBar.Position = UDim2.new(0, 0, -0.0167064443, 0)
+TopBar.Size = UDim2.new(0, 320, 0, 7)
+TopBar.ZIndex = 3
+GuiSearch.Name = "GuiSearch"
+GuiSearch.Parent = MainLibrary
+GuiSearch.BackgroundColor3 = Color3.new(1, 1, 1)
+GuiSearch.BackgroundTransparency = 1
+GuiSearch.Position = UDim2.new(0, 0, 0.186157525, 0)
+GuiSearch.Size = UDim2.new(0, 320, 0, 31)
+GuiSearch.ZIndex = 3
+GuiSearch.Font = Enum.Font.SourceSansLight
+GuiSearch.FontSize = Enum.FontSize.Size36
+GuiSearch.Text = "Search Gui(s)"
+GuiSearch.TextSize = 34
+GuiObj.Name = "GuiObj"
+GuiObj.Parent = MainLibrary
+GuiObj.BackgroundColor3 = Color3.new(1, 1, 1)
+GuiObj.BackgroundTransparency = 1
+GuiObj.BorderSizePixel = 0
+GuiObj.Position = UDim2.new(0, 0, 0.260143191, 0)
+GuiObj.Size = UDim2.new(0, 320, 0, 311)
+GuiObj.ZIndex = 5
+GuiObj.BottomImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
+GuiObj.ScrollBarThickness = 9
+GuiObj.TopImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
+ScriptObj.Name = "ScriptObj"
+ScriptObj.Parent = MainLibrary
+ScriptObj.BackgroundColor3 = Color3.new(1, 1, 1)
+ScriptObj.BackgroundTransparency = 1
+ScriptObj.BorderSizePixel = 0
+ScriptObj.Position = UDim2.new(0, 0, 0.260143191, 0)
+ScriptObj.Size = UDim2.new(0, 320, 0, 311)
+ScriptObj.Visible = false
+ScriptObj.ZIndex = 5
+ScriptObj.BottomImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
+ScriptObj.ScrollBarThickness = 9
+ScriptObj.TopImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
+ScriptSearch.Name = "ScriptSearch"
+ScriptSearch.Parent = MainLibrary
+ScriptSearch.BackgroundColor3 = Color3.new(1, 1, 1)
+ScriptSearch.BackgroundTransparency = 1
+ScriptSearch.Position = UDim2.new(0, 0, 0.186157525, 0)
+ScriptSearch.Size = UDim2.new(0, 320, 0, 31)
+ScriptSearch.Visible = false
+ScriptSearch.ZIndex = 3
+ScriptSearch.Font = Enum.Font.SourceSansLight
+ScriptSearch.FontSize = Enum.FontSize.Size36
+ScriptSearch.Text = "Search Script(s)"
+ScriptSearch.TextSize = 34
+ImageButton.Parent = MainLibrary
+ImageButton.BackgroundColor3 = Color3.new(1, 1, 1)
+ImageButton.BackgroundTransparency = 1
+ImageButton.Position = UDim2.new(0.790625036, 0, 0, 0)
+ImageButton.Size = UDim2.new(0, 29, 0, 29)
+ImageButton.ZIndex = 3
+ImageButton.Image = "rbxassetid://1410266360"
+ImageButton.ImageColor3 = Color3.new(0.368627, 0.368627, 0.368627)
+Settings.Name = "Settings"
+Settings.Parent = MainLibrary
+Settings.BackgroundColor3 = Color3.new(1, 1, 1)
+Settings.BorderSizePixel = 0
+Settings.Position = UDim2.new(0, 0,0.735, 0)
+Settings.Size = UDim2.new(0, 320, 0, 111)
+OTitle.Name = "OTitle"
+OTitle.Parent = Settings
+OTitle.BackgroundColor3 = Color3.new(1, 1, 1)
+OTitle.BackgroundTransparency = 1
+OTitle.Size = UDim2.new(0, 320, 0, 36)
+OTitle.Font = Enum.Font.SourceSansLight
+OTitle.FontSize = Enum.FontSize.Size36
+OTitle.Text = "Opacity"
+OTitle.TextSize = 36
+Transparency.Name = "Transparency"
+Transparency.Parent = Settings
+Transparency.BackgroundColor3 = Color3.new(1, 1, 1)
+Transparency.BackgroundTransparency = 1
+Transparency.BorderColor3 = Color3.new(0.356863, 0.803922, 1)
+Transparency.Position = UDim2.new(0, 0, 0.445945948, 0)
+Transparency.Size = UDim2.new(0, 320, 0, 12)
+Transparency.BottomImage = "rbxassetid://62445043"
+Transparency.CanvasSize = UDim2.new(0, 200000, 0, 0)
+Transparency.MidImage = "rbxassetid://62445043"
+Transparency.TopImage = "rbxassetid://62445043"
+GUIListLayout.Parent = GuiObj
+GUIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+GUIListLayout.Padding = UDim.new(.01, 1) -- (Space between each object, idk what this is)
+ScriptListLayout.Parent = ScriptObj
+ScriptListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+ScriptListLayout.Padding = UDim.new(.01, 1)
+for i, v in pairs(scripts) do
+	local OBJ = Instance.new("Frame")
+	local Script = Instance.new("TextButton")
+	local ICON = Instance.new("ImageLabel")
+	ICON.Parent = OBJ
+	OBJ.Parent = ScriptObj
+	OBJ.BackgroundColor3 = Color3.new(0.360784, 0.807843, 1)
+	OBJ.BorderSizePixel = 0
+	OBJ.Position = UDim2.new(0.537290692, 0, 0.520231247, 0)
+	OBJ.Size = UDim2.new(0, 277, 0, 41)
+	OBJ.ZIndex = 10
+	ICON.Name = "Iconyey"
+	ICON.Parent = OBJ
+	ICON.BackgroundColor3 = Color3.new(1, 1, 1)
+	ICON.BackgroundTransparency = 1
+	ICON.Position = UDim2.new(0, 0, 0.073170729, 0)
+	ICON.Size = UDim2.new(0, 38, 0, 38)
+	ICON.ZIndex = 18
+	ICON.Image = "rbxassetid://728745761"
+	Script.Parent = OBJ
+	Script.BackgroundColor3 = Color3.new(1, 1, 1)
+	Script.BackgroundTransparency = 1
+	Script.Position = UDim2.new(0.15523465, 0, 0, 0)
+	Script.Size = UDim2.new(0, 234, 0, 41)
+	Script.ZIndex = 20
+	Script.Font = Enum.Font.SourceSansLight
+	Script.FontSize = Enum.FontSize.Size14
+	Script.TextColor3 = Color3.new(0.00392157, 0.00392157, 0.00392157)
+	Script.TextScaled = true
+	Script.TextSize = 14
+	Script.TextWrapped = true
+	Script.Text = i
+	Script.ZIndex = 18
+	OBJ.Name = i
+	ScriptObj.CanvasSize = UDim2.new(0,0,2,20*#ScriptObj:GetChildren()+20)
+	Script.MouseButton1Click:connect(function()
+		loadstring(game:HttpGet(v, true))()
+	end)
+end
+for i, v in pairs(guis) do
+	local OBJ = Instance.new("Frame")
+	local Script = Instance.new("TextButton")
+	local ICON = Instance.new("ImageLabel")
+	ICON.Parent = OBJ
+	OBJ.Parent = GuiObj
+	OBJ.BackgroundColor3 = Color3.new(0.360784, 0.807843, 1)
+	OBJ.BorderSizePixel = 0
+	OBJ.Position = UDim2.new(0.537290692, 0, 0.520231247, 0)
+	OBJ.Size = UDim2.new(0, 277, 0, 41)
+	OBJ.ZIndex = 10
+	ICON.Name = "Iconyey"
+	ICON.Parent = OBJ
+	ICON.BackgroundColor3 = Color3.new(1, 1, 1)
+	ICON.BackgroundTransparency = 1
+	ICON.Position = UDim2.new(0, 0, 0.073170729, 0)
+	ICON.Size = UDim2.new(0, 38, 0, 38)
+	ICON.ZIndex = 18
+	ICON.Image = "rbxassetid://728745761"
+	Script.Parent = OBJ
+	Script.BackgroundColor3 = Color3.new(1, 1, 1)
+	Script.BackgroundTransparency = 1
+	Script.Position = UDim2.new(0.15523465, 0, 0, 0)
+	Script.Size = UDim2.new(0, 234, 0, 41)
+	Script.ZIndex = 20
+	Script.Font = Enum.Font.SourceSansLight
+	Script.FontSize = Enum.FontSize.Size14
+	Script.TextColor3 = Color3.new(0.00392157, 0.00392157, 0.00392157)
+	Script.TextScaled = true
+	Script.TextSize = 14
+	Script.TextWrapped = true
+	Script.Text = i
+	Script.ZIndex = 18
+	OBJ.Name = i
+	ScriptObj.CanvasSize = UDim2.new(0,0,2,20*#ScriptObj:GetChildren()+20)
+	Script.MouseButton1Click:connect(function()
+		loadstring(game:HttpGet(v, true))()
+	end)
+end
+ScriptSearch:GetPropertyChangedSignal("Text"):Connect(function()
+	for i, v in pairs(ScriptObj:GetChildren()) do
+		if v:IsA("GuiObject") then
+		if v.Name:lower():match(ScriptSearch.Text:lower()) then
+			v.Visible = true
+		else
+			v.Visible = false
+		end
+		end
+	end
+end)
+GuiSearch:GetPropertyChangedSignal("Text"):Connect(function()
+	for i, v in pairs(GuiObj:GetChildren()) do
+		if v:IsA("GuiObject") then
+		if v.Name:lower():match(GuiSearch.Text:lower()) then
+			v.Visible = true
+		else
+			v.Visible = false
+		end
+		end
+	end
+end)
+ScriptsOPEN.MouseButton1Down:connect(function()
+	Chooser:TweenPosition(UDim2.new(0.5, 0, 0.155, 0), "Out", "Sine", .1, true)
+	GuiObj.Visible = false
+	GuiSearch.Visible = false
+	ScriptObj.Visible = true
+	ScriptSearch.Visible = true
+	FADE(ScriptsOPEN)	
+end)
+GuiOPEN.MouseButton1Down:connect(function()
+	Chooser:TweenPosition(UDim2.new(0, 0,0.155, 0), "Out", "Sine", .1, true)
+	ScriptObj.Visible = false
+	ScriptSearch.Visible = false
+	GuiObj.Visible = true
+	GuiSearch.Visible = true
+	FADE(GuiOPEN)
+end)
+Close.MouseButton1Up:connect(function()
+	Library:Destroy()
+end)
+ImageButton.MouseButton1Up:connect(function()
+	if Settings.Position == UDim2.new(0, 0, 1, 0) then
+		Settings:TweenPosition(UDim2.new(0, 0,0.735, 0), "Out", "Quint", .3, true)
+		Settings.Visible = false
+		repeat
+			ImageButton.Rotation = ImageButton.Rotation + 3
+			game:GetService("RunService").Stepped:wait()
+		until ImageButton.Rotation == 90
+	elseif Settings.Position == UDim2.new(0, 0,0.735, 0) then
+		Settings:TweenPosition(UDim2.new(0, 0, 1, 0), "Out", "Quint", .3, true)
+		Settings.Visible = true
+		repeat
+			ImageButton.Rotation = ImageButton.Rotation + 3
+			game:GetService("RunService").Stepped:wait()
+		until ImageButton.Rotation == 90 
+	else 
+		print("Error")
+	end
+end)
+local max = Transparency.CanvasSize.X.Offset - 1000
+Transparency:GetPropertyChangedSignal("CanvasPosition"):Connect(function()
+	MainLibrary.BackgroundTransparency = Transparency.CanvasPosition.X / max * 1.1
+end)
+local bam = 255
+while true do
+wait()
+for i = 1,bam,15 do
+LibraryIcon.ImageColor3 = Color3.new(i/bam,0/bam,0/bam)
+wait()
+end
+for i = 1,bam,15 do
+LibraryIcon.ImageColor3 = Color3.new(bam/bam,i/bam,0/bam)
+wait()
+end
+for i = 1,bam,15 do
+LibraryIcon.ImageColor3 = Color3.new(bam/bam,bam/bam,i/bam)
+wait()
+end
+for i = bam,15,-15 do
+LibraryIcon.ImageColor3 = Color3.new(i/bam,bam/bam,bam/bam)
+wait()
+end
+for i = bam,15,-15 do
+LibraryIcon.ImageColor3 = Color3.new(0/bam,i/bam,bam/bam)
+wait()
+end
+for i = bam,15,-15 do
+LibraryIcon.ImageColor3 = Color3.new(0/bam,0/bam,i/bam)
+wait()
+end
+end
