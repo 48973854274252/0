@@ -5,7 +5,7 @@ guis = {
 }
 scripts = {
 	["Vaeb's RemoteSpy"] = "https://raw.githubusercontent.com/48973854274252/0/refs/heads/main/Script.Storage/VeobRemotespy",
-	
+	["Comet"] = "https://raw.githubusercontent.com/48973854274252/Source/refs/heads/main/Function/Comet/Ui",
 }
 local Library = Instance.new("ScreenGui")
 local MainLibrary = Instance.new("Frame")
