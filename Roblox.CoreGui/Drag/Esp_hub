@@ -1,5 +1,5 @@
 guis = {
-	["Esp Menu Name  Health etc.."] = "https://raw.githubusercontent.com/48973854274252/reimagined-octo-waffle/refs/heads/main/Esp%20menu%20Health%20%5B%20team%20%5B%20name",
+	["Esp Menu Name"] = "https://raw.githubusercontent.com/48973854274252/reimagined-octo-waffle/refs/heads/main/Esp%20menu%20Health%20%5B%20team%20%5B%20name",
 	["Corgi's Esp Hub"] = "https://raw.githubusercontent.com/48973854274252/reimagined-octo-waffle/refs/heads/main/Corgi's%20esp",
 	["Menu Fly hacks Esp Speed"] = "https://raw.githubusercontent.com/48973854274252/reimagined-octo-waffle/refs/heads/main/Mod%20menu%20fly%20hacks",
 }
