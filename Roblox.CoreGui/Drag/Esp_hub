@@ -5,7 +5,7 @@ guis = {
 }
 scripts = {
 	["Spider Script"] = "https://raw.githubusercontent.com/48973854274252/reimagined-octo-waffle/refs/heads/main/Spider",
-	["Comet"] = "https://raw.githubusercontent.com/48973854274252/Source/refs/heads/main/Function/Comet/Ui",
+	["Dex Mobile"] = "https://raw.githubusercontent.com/48973854274252/75897/refs/heads/main/DarkDex_Mobile.txt",
 }
 local Library = Instance.new("ScreenGui")
 local MainLibrary = Instance.new("Frame")
